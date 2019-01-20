@@ -1,9 +1,8 @@
 import React from 'react'
 
 const Form = (props) => {
-  let {inputLocation, handleChange, handleSubmit } = props;
+  let {inputLocation, handleChange, handleSubmit, convertToC, handleClick } = props;
     return (
-      <>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -13,11 +12,11 @@ const Form = (props) => {
             placeholder="Enter location"
           />
           <button type="submit">Go</button>
+          <div className="toggle" onClick={handleClick}>{convertToC ? "°C":"°F"}</div>
         </form>
-      </>
     )
 
 
 }
 
-export default Form
+export default Form;

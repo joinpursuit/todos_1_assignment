@@ -15,7 +15,8 @@ class App extends Component {
       longitude: "",
       latitude: "",
       inputLocation: "",
-      location: ""
+      location: "",
+      convertToC: true
     }
   }
   //API Handlers
@@ -70,16 +71,30 @@ class App extends Component {
     })
   }
 
+  handleClick = () => {
+    let newBoolean = this.state.convertToC ? false : true
+    this.setState({
+      convertToC: newBoolean
+    })
+  }
+
   render() {
-    let { dailyData, inputLocation, location } = this.state
+    let { dailyData, inputLocation, location, convertToC } = this.state
     return (
       <div className="App">
+        <img alt="earth" src="https://space-facts.com/wp-content/uploads/earth-transparent.png" />
         <Form
           inputLocation={inputLocation}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          handleClick={this.handleClick}
+          convertToC={convertToC}
         />
-        <WeatherInfo dailyData={dailyData} location={location}/>
+        <WeatherInfo
+          dailyData={dailyData}
+          location={location}
+          convertToC={convertToC}
+        />
       </div>
     );
   }
@@ -87,6 +102,8 @@ class App extends Component {
 
 export default App;
 
+//make a button that switches between how it looks
+// everytime you click
 
 //make form functional Component
 //make weather info functional component

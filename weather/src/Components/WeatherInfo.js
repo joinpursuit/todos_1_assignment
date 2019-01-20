@@ -5,7 +5,7 @@ import Day from './Day'
 //pass each array as props
 //map into weather info
 const WeatherInfo = (props) => {
-  let { dailyData, location } = props
+  let { dailyData, location, convertToC } = props
   let dailyCopyDay = [...dailyData].map(day => {
     //parse Unix to Day
     return new Date(day.time*1000).getDay();
@@ -13,17 +13,19 @@ const WeatherInfo = (props) => {
   let dailyCopyIcon = [...dailyData].map(day => {
     return day.icon;
   })
-  let dailyCopyTemp = [...dailyData].map(day => {
-    return `${Math.round(day.temperatureMin)}-${Math.round(day.temperatureMax)}°F`
-  })
+  let dailyCopyTempF = [...dailyData].map(day => {
+    return [Math.round(day.temperatureMin),Math.round(day.temperatureMax)]
+  }).flat()
+
   return (
     <>
-      <p>tis the weatha this week.</p>
+      <p>tis the weatha upon us this week.</p>
       <p>{location}</p>
       <Day
         dayArray={dailyCopyDay}
-        tempArray={dailyCopyTemp}
-        iconArray={dailyCopyTemp}
+        tempArray={dailyCopyTempF}
+        iconArray={dailyCopyIcon}
+        convertToC={convertToC}
       />
     </>
   )

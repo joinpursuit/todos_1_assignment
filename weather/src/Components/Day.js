@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Day = (props) => {
-  let parseDays = props.dayArray.map( day => {
+const Day = ({ dayArray, tempArray, convertToC}) => {
+  let parseDays = dayArray.map( day => {
     let dayStrings = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
     return dayStrings[day];
   })
@@ -11,12 +11,17 @@ const Day = (props) => {
       <span>{day}</span>
     )
   })
-  let renderTemps = props.tempArray.map( temp => {
+  let tempsToC = tempsConverter(tempArray)
+  let renderTemps = tempArray.map((temp,i,a) => {
     return (
-      <span>{temp}</span>
+      <><span>{temp}°</span>{(i % 2 === 0) ? "-" : ""}</>
     )
   })
-
+  let renderTempsToC = tempsToC.map((temp,i,a) => {
+    return (
+      <><span>{temp}°</span>{(i % 2 === 0) ? "-" : ""}</>
+    )
+  })
 
   return (
     <>
@@ -24,10 +29,16 @@ const Day = (props) => {
       {renderDays}
       </div>
       <div id="day">
-      {renderTemps}
+      {convertToC ? renderTempsToC : renderTemps}
       </div>
     </>
   )
+}
+
+const tempsConverter = (tempsArr) => {
+  return tempsArr.map(tempF => {
+    return Math.round((tempF - 32) / 1.8)
+  })
 }
 
 export default Day
