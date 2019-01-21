@@ -16,7 +16,8 @@ class App extends Component {
       latitude: "",
       inputLocation: "",
       location: "",
-      convertToC: true
+      convertToC: true,
+      error: false
     }
   }
   //API Handlers
@@ -52,8 +53,17 @@ class App extends Component {
             })
   }
   async handleApiFlow() {
-    const geoRes = await this.getGeoLocation()
-    const weatherRes = await this.getWeatherData()
+    try {
+      const geoRes = await this.getGeoLocation()
+      const weatherRes = await this.getWeatherData()
+      this.setState({
+        error: false
+      })
+    } catch (e) {
+      this.setState({
+        error: true
+      })
+    }
   }
 
   //User Input Handlers
@@ -79,10 +89,13 @@ class App extends Component {
   }
 
   render() {
-    let { dailyData, inputLocation, location, convertToC } = this.state
+    let { dailyData, inputLocation, location, convertToC, error } = this.state
     return (
       <div className="App">
-        <img alt="earth" src="https://space-facts.com/wp-content/uploads/earth-transparent.png" />
+        <img
+          alt="earth"
+          src="https://space-facts.com/wp-content/uploads/earth-transparent.png"
+        />
         <Form
           inputLocation={inputLocation}
           handleChange={this.handleChange}
@@ -94,6 +107,7 @@ class App extends Component {
           dailyData={dailyData}
           location={location}
           convertToC={convertToC}
+          error={error}
         />
       </div>
     );

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Aleo');
+@import url('https://fonts.googleapis.com/css?family=Aleo:300,400');
 
 .App {
   text-align: center;
@@ -14,18 +14,27 @@
   color: white;
 }
 
+img {
+  width: 200px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+  justify-content: space-around;
+}
+
+input {
+  font-size: 14px;
+}
+
 .toggle {
   width: 25px;
   background: linear-gradient(200deg, #8098af 0%,#233e4e 100%);
   border-radius: 7px;
   cursor: default;
-}
-
-form {
-  display: flex;
-  flex-direction: row;
-  width: 200px;
-  justify-content: space-around;
 }
 
 div#day {
@@ -34,6 +43,7 @@ div#day {
   flex-direction: row;
   justify-content: space-between;
   width: 500px;
+  font-weight: 400;
 }
 
 div span {
@@ -42,6 +52,13 @@ div span {
   justify-content: center;
 }
 
-img {
-  width: 200px;
+.icon {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+
+.icon img {
+  width: 100px;
+  height: 100px;
 }

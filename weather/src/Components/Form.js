@@ -15,8 +15,6 @@ const Form = (props) => {
           <div className="toggle" onClick={handleClick}>{convertToC ? "°C":"°F"}</div>
         </form>
     )
-
-
 }
 
 export default Form;

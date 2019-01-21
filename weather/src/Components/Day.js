@@ -1,6 +1,7 @@
 import React from 'react'
+import Icon from './Icon'
 
-const Day = ({ dayArray, tempArray, convertToC}) => {
+const Day = ({ dayArray, iconArray, tempArray, convertToC}) => {
   let parseDays = dayArray.map( day => {
     let dayStrings = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
     return dayStrings[day];
@@ -29,8 +30,12 @@ const Day = ({ dayArray, tempArray, convertToC}) => {
       {renderDays}
       </div>
       <div id="day">
+        <Icon iconArray={iconArray} />
+      </div>
+      <div id="day">
       {convertToC ? renderTempsToC : renderTemps}
       </div>
+
     </>
   )
 }

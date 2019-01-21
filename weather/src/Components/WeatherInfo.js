@@ -5,7 +5,7 @@ import Day from './Day'
 //pass each array as props
 //map into weather info
 const WeatherInfo = (props) => {
-  let { dailyData, location, convertToC } = props
+  let { dailyData, location, convertToC, error } = props
   let dailyCopyDay = [...dailyData].map(day => {
     //parse Unix to Day
     return new Date(day.time*1000).getDay();
@@ -19,8 +19,8 @@ const WeatherInfo = (props) => {
 
   return (
     <>
-      <p>tis the weatha upon us this week.</p>
-      <p>{location}</p>
+      <p>{error ? "No Information was found for this location, try again." : "tis the weatha upon us this week."}</p>
+      <h2>{location}</h2>
       <Day
         dayArray={dailyCopyDay}
         tempArray={dailyCopyTempF}
