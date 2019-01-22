@@ -17,7 +17,8 @@ class App extends Component {
       inputLocation: "",
       location: "",
       convertToC: true,
-      error: false
+      error: false,
+      loading: false
     }
   }
   //API Handlers
@@ -48,7 +49,8 @@ class App extends Component {
               //store the first 5 days
               let dailyData = res.data.daily.data.slice(0,5)
               this.setState({
-                dailyData: dailyData
+                dailyData: dailyData,
+                loading: false
               })
             })
   }
@@ -61,7 +63,8 @@ class App extends Component {
       })
     } catch (e) {
       this.setState({
-        error: true
+        error: true,
+        loading: false
       })
     }
   }
@@ -69,18 +72,19 @@ class App extends Component {
   //User Input Handlers
   handleSubmit = (event) => {
     event.preventDefault();
+    this.setState({
+      loading: true
+    })
     this.handleApiFlow();
     this.setState({
       inputLocation: ""
     })
   }
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
-
   handleClick = () => {
     let newBoolean = this.state.convertToC ? false : true
     this.setState({
@@ -89,7 +93,7 @@ class App extends Component {
   }
 
   render() {
-    let { dailyData, inputLocation, location, convertToC, error } = this.state
+    let { dailyData, inputLocation, location, convertToC, error, loading } = this.state
     return (
       <div className="App">
         <img
@@ -104,10 +108,11 @@ class App extends Component {
           convertToC={convertToC}
         />
         <WeatherInfo
-          dailyData={dailyData}
-          location={location}
-          convertToC={convertToC}
-          error={error}
+        dailyData={dailyData}
+        location={location}
+        convertToC={convertToC}
+        error={error}
+        loading={loading}
         />
       </div>
     );

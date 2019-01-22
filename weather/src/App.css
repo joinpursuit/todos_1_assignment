@@ -18,6 +18,9 @@ img {
   width: 200px;
 }
 
+img#loading {
+  width: 60px;
+}
 
 form {
   display: flex;
@@ -26,8 +29,13 @@ form {
   justify-content: space-around;
 }
 
-input {
+input, button {
   font-size: 14px;
+}
+
+button:focus, input:focus {
+  outline-offset: -1px;
+  outline: 2px solid #8098af;
 }
 
 .toggle {
