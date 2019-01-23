@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo:300,400');
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+  font-family: 'Aleo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+}
+
+img {
+  width: 200px;
+}
+
+img#loading {
+  width: 60px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+  justify-content: space-around;
+}
+
+input, button {
+  font-size: 14px;
+}
+
+button:focus, input:focus {
+  outline-offset: -1px;
+  outline: 2px solid #8098af;
+}
+
+.toggle {
+  width: 25px;
+  background: linear-gradient(200deg, #8098af 0%,#233e4e 100%);
+  border-radius: 7px;
+  cursor: default;
+}
+
+div#day {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  font-weight: 400;
+}
+
+div span {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+
+.icon img {
+  width: 100px;
+  height: 100px;
+}
