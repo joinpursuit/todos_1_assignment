@@ -1,3 +1,12 @@
+(reference:
+  https://github.com/XavierC4Q/weather_pursuit
+  https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+  Kelly: current date: {(props.date new Date(dateString))}
+npm install axios --save
+
+  )
+
 # Looking Back and Looking Forward
 
 ## Part 1: Refactor, Ya Hacker
