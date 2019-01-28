@@ -66,65 +66,43 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.getLocation()
     this.getWeather()
-
   }
-
-  // renderDateTime = () => {}
-  // renderTemperature = () => {}
-  // renderDescriptionSummary = () => {}
-  // renderDescriptionIcon = () => {}
-  // renderHumidity = () => {}
 
   renderCurrently(){
     const {weather: {currently}} = this.state
-    return(
-      <Currently currently={currently} />
-    )
+    this.setState({currently: currently})
   }
 
   renderDaily(){
     const {weather: {daily}} = this.state
     this.setState({daily: daily})
-    return(
-      <Daily daily={daily} />
-    )
   }
 
   renderHourly(){
     const {weather: {hourly}} = this.state
     this.setState({hourly: hourly})
-    return(
-      <Hourly hourly={hourly} />
-    )
-
   }
 
   renderTimezone(){
     const {weather: {timezone}} = this.state
     this.setState({timezone: timezone})
-    return(
-      <Timezone timezone={timezone} />
-    )
   }
 
   render() {
-    // debugger
-    // const {weather, weather:{timezone}, weather:{currently}, weather:{daily}, weather:{hourly}} = this.state;
-    // console.log({weather: {timezone}});
     const {weather} = this.state;
     const {currently, daily, hourly, timezone} = weather;
     return (
       <div className="App">
-        {<Currently currently={currently} />}
-        {this.renderHourly}
-        {this.renderDaily}
-        {this.renderTimezone}
+        <Timezone timezone={timezone} />
+        <Currently currently={currently} />
+        <Hourly hourly={hourly} />
+        <Daily daily={daily} />
       </div>
     );
   }
 }
+
 // <Weather weather={this.state.weather}/>
 
 export default App;
