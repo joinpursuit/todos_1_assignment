@@ -1,9 +1,12 @@
 (reference:
   https://github.com/XavierC4Q/weather_pursuit
+  https://github.com/XavierC4Q/weather_pursuit/blob/master/src/App.js
   https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
   Kelly: current date: {(props.date new Date(dateString))}
+  https://hackernoon.com/react-native-basics-geolocation-adf3c0d10112
 npm install axios --save
+
 
   )
 
