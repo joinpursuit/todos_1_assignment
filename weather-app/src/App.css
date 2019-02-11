@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+
+.eightDay {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.eachDay {
+  width: 130px;
+  min-height: 300px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5px;
+
+}
+
+.forcastHeader{
+  display: flex;
+  text-align: left;
+  padding-left: 10px;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 10px;
+}
+
+.forcastHeader h3 {
+  padding: 7px 0 0 0;
+  margin: 0;
+}
+
+.forcastHeader p {
+  font-size: 12px;
+  padding-left: 15px;
+}
+
+.hourlyTemps {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.eachHour {
+ width: 90px;
+ min-height: 150px;
+ border: 2px solid #e6e6e6;
+ border-radius: 5px;
+}
+
+.hourlyPTags {
+  padding: 2px 0;;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 100px;
+  padding-bottom: 0;
+}
+
+.infoLine {
+  display: inline;
+  text-align: left;
+}
+
+.alertDiv {
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 50% 50%;
+}
+
+.alertTitle {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+
+}
+
+.alertBody{
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  align-content: center;
+}
+.alerts {
+ width: 90%;
+}
